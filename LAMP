@@ -1,0 +1,78 @@
+Step 1:Install Apache
+	1.1.Install Apache web server
+
+		yum install httpd
+
+	1.2.Start Apache service
+
+		systemctl start httpd
+
+	1.3 Ensure Apache is running
+
+		systemctl status httpd
+
+	1.4. Active Apache to start during system boot
+
+		systemctl enable httpd
+
+	1.5.Test Apache
+		
+		http://ip-server
+ 
+
+Step 2:Install and config MariaDB Database
+
+	2.1.Install MariaDB Database
+
+		yum install mariadb-server mariadb -y
+	
+	2.2.Start MariaDB service
+
+		systemctl start mariadb
+
+	2.3.Ensure MariaDB is running
+
+		systemctl status mariadb
+
+	2.4.Active MariaDB to start during system boot
+
+			systemctl enable mariadb
+	
+	2.5.Config securing MariaDB
+
+		mysql_secure_installation
+		
+
+		y
+		set password for MariaDB 
+		y
+		y
+		y
+		y
+Step 3:Install php
+
+	3.1.Install PHP and MySQL extension
+
+	yum install php php-mysql
+
+		y
+
+	3.2. Test PHP
+
+		cd /var/www/html
+
+		touch testphp.php
+
+		ll
+
+		nano testphp.php
+
+		<?php
+			phpinfo();
+		?>
+
+		
+		   systemctl restart httpd
+
+		http://ip_server/testphp.php
+			
